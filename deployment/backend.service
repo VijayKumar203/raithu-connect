@@ -1,0 +1,15 @@
+[Unit]
+Description=Raithu-Connect Node API
+After=network.target
+
+[Service]
+Type=simple
+User=raithu
+WorkingDirectory=/opt/raithu-connect
+EnvironmentFile=/opt/raithu-connect/.env
+ExecStart=/usr/bin/node /opt/raithu-connect/src/server.js
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
